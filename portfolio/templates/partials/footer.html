@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+<hr>
+
+<footer class="row">
+    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+        <div class="container mt-4">
+            <h3 class="text-center">¡Hablemos!</h3>
+            <form action="/contactar/" method="POST">{% csrf_token %}
+                <div class="mb-3">
+                    <p class="form-label">Asunto: <input type="text" name="txtAsunto" class="form-control" required></p>
+                </div>
+                <div class="mb-3">
+                    <p class="form-label">Email: <input type="email" name="txtEmail" class="form-control" placeholder="Ingrese su correo electrónico." required></p>
+                </div>
+                <div class="mb-3">
+                    <p class="form-label">
+                        Mensaje: 
+                        <textarea name="txtMensaje" rows="6" style="resize: none;" class="form-control" required></textarea>
+                    </p>
+                </div>
+                <input type="submit" value="Enviar" class="form-control btn btn-primary my-2">
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="container mt-4">
+            <h3 class="text-center">Contáctame</h3>
+            <ul class="list-group my-4">
+                <a href="https://www.linkedin.com/in/jeanpoololiveryantasinocente/" target="_blank" class="list-group-item my-2 rounded-5 text-center">
+                    <i class="fab fa-linkedin m-1"></i> Linkedin
+                </a>
+                <a href="https://github.com/jeanyantas" target="_blank" class="list-group-item my-2 rounded-5 text-center">
+                    <i class="fab fa-github m-1"></i> Github
+                </a>
+                <a href="https://www.youtube.com/channel/UCxV3cXwh9Ls1Osvyer2wvFw/featured" target="_blank" class="list-group-item my-2 rounded-5 text-center">
+                    <i class="fab fa-youtube m-1"></i> YouTube
+                </a>
+                <a href="https://www.instagram.com/jeanpoolyantas/" target="_blank" class="list-group-item my-2 rounded-5 text-center">
+                    <i class="fab fa-instagram m-1"></i> Instagram
+                </a>
+                {% comment %}
+                <a href="https://www.freecodecamp.org/JeanYantas" target="_blank" class="list-group-item my-2 rounded-5 text-center">
+                    <i class="fab fa-free-code-camp m-1"></i> FeeCodeCamp.org
+                </a>
+                <a href="#" target="_blank" class="list-group-item my-2 rounded-5 text-center">
+                    <i class="fab fa-twitter-square m-1"></i> Twitter
+                </a>
+                {% endcomment %}
+            </ul>
+        </div>
+    </div>
+</footer>

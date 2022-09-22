@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+
+    <title>{% block title %}Portfolio{% endblock %}</title>
+
+    <header class="row bg-white rounded-4 py-4 px-4">
+
+        <div class="col-md-4 p-5">
+            <img src="{% static 'portfolio/foto.jpg' %}" alt="foto_perfil" class="img-fluid border border-1 rounded-circle">
+        </div>
+
+        <div class="col-md-8 my-auto">
+            <p class="h2">Bienvenidos, yo soy <strong>Jean Pool Oliver Yantas Inocente</strong></p>
+            <p class="h6">Bachiller en <strong>Ingeniería de Sistemas</strong></p>
+            <p style="text-align: justify;">Hola, soy un desarrollador python, me encantaría poder entrar a formar parte de una empresa en la cual poder aplicar todos mis conocimientos y, al mismo tiempo, que me permita desarrollarme profesionalmente. Gracias a mi formación especializada, considero que puedo aportar valor y seguir desarrollándome profesionalmente en una compañía que coincida con mis valores y expectativas. Como persona organizada y con una gran motivación, soy capaz de adaptarme a cualquier circunstancia y dar siempre lo mejor de mí en cualquier proyecto, al mismo tiempo que me esfuerzo por trabajar en equipo y fomentar valores como los del compañerismo.</p>
+            <a href="{% static 'portfolio/CV.pdf' %}" target="_blank" class="btn btn-primary btn-lg rounded-2 my-3">Descargar CV</a>
+        </div>
+    </header>
+
+<div class="row my-4 text-center">
+    <h3>Mis Proyectos</h3>
+    <p>Me apasiona crear software que mejore la vida de quienes me rodean. Te presento mi portafolio y CV hecho con los estandares web HTML, CSS, Bootstrap 5, Python y Django. Aquí puedes ver de forma inmediata mis proyectos ¡Espero te guste!</p>
+
+    {% if projects %}
+        {% for project in projects %}
+            <div class="col-md-4 p-4">
+                <div class="card bg-white card-project" style="cursor:auto;">
+                    <img src="{{ project.image.url }}" alt="project.title" class="card-img-top" />
+                    <div class="card-body">
+
+                        <h2> {{ project.title }} </h2>
+                        <p> {{ project.description }} </p>
+                
+                        {% if project.repositorio %}
+                            <a href="{{ project.repositorio }}" target="_blank"><i class="fab fa-github m-2"></i></a>
+                        {% endif %}
+
+                        {% if project.url %}
+                            <a href="{{ project.url }}" target="_blank"><i class="fas fa-globe-asia m-2"></i></a>
+                        {% endif %}
+                    </div>
+
+
+                </div>
+            </div>    
+        {% endfor %}
+    {% else %}
+        <div class="d-flex justify-content-start">
+            <p class="m-5">No existen entradas.</p>
+        </div>
+    {% endif %}
+{% endblock %}
+</div> 
