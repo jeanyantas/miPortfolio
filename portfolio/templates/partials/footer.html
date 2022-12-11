@@ -1,31 +1,30 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
-<hr>
-
-<footer class="row">
+<footer class="container row rounded-4 p-4" id="contacto" style="background: #1f1f1f;">
     <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
-        <div class="container mt-4">
-            <h3 class="text-center">¡Hablemos!</h3>
-            <form action="/contactar/" method="POST">{% csrf_token %}
-                <div class="mb-3">
-                    <p class="form-label">Asunto: <input type="text" name="txtAsunto" class="form-control" required></p>
+        <div class="container">
+            <h3 class="text-center text-white">¡Hablemos!</h3>
+            <br>
+            <form action="/contactar/" class="form-control p-3" method="POST">{% csrf_token %}
+                <div class="form-floating mb-3">
+                    <input type="text" name="txtAsunto" class="form-control" placeholder="..." required>
+                    <label for="txtAsunto"><i class="fa-solid fa-envelope"></i> Asunto</label>
                 </div>
-                <div class="mb-3">
-                    <p class="form-label">Email: <input type="email" name="txtEmail" class="form-control" placeholder="Ingrese su correo electrónico." required></p>
+                <div class="form-floating mb-3">
+                    <input type="email" name="txtEmail" class="form-control" placeholder="..." required>
+                    <label for="txtEmail"><i class="fa-solid fa-at"></i> Email</label>
                 </div>
-                <div class="mb-3">
-                    <p class="form-label">
-                        Mensaje: 
-                        <textarea name="txtMensaje" rows="6" style="resize: none;" class="form-control" required></textarea>
-                    </p>
+                <div class="form-floating mb-3">
+                    <textarea name="txtMensaje" style="resize:none;height:150px;" class="form-control" placeholder="..." required></textarea>
+                    <label for="txtMensaje"><i class="fa-solid fa-message"></i> Mensaje</label>
                 </div>
                 <input type="submit" value="Enviar" class="form-control btn btn-primary my-2">
             </form>
         </div>
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="container mt-4">
-            <h3 class="text-center">Contáctame</h3>
+        <div class="container">
+            <h3 class="text-center text-white">Contáctame</h3>
             <ul class="list-group my-4">
                 <a href="https://www.linkedin.com/in/jeanpoololiveryantasinocente/" target="_blank" class="list-group-item my-2 rounded-5 text-center">
                     <i class="fab fa-linkedin m-1"></i> Linkedin
@@ -39,6 +38,9 @@
                 <a href="https://www.instagram.com/jeanpoolyantas/" target="_blank" class="list-group-item my-2 rounded-5 text-center">
                     <i class="fab fa-instagram m-1"></i> Instagram
                 </a>
+                <a href="https://api.whatsapp.com/send?phone=51937817827" target="_blank" class="list-group-item my-2 rounded-5 text-center">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
                 {% comment %}
                 <a href="https://www.freecodecamp.org/JeanYantas" target="_blank" class="list-group-item my-2 rounded-5 text-center">
                     <i class="fab fa-free-code-camp m-1"></i> FeeCodeCamp.org
@@ -49,5 +51,15 @@
                 {% endcomment %}
             </ul>
         </div>
+    </div>
+</footer>
+<footer class="text-center text-white">
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <p>Copyright © MyWebsite. All rights reserved.</p>
+        </div>
+    </div>
     </div>
 </footer>

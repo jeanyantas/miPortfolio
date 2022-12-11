@@ -1,19 +1,33 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg" style="background: #FFC133;">
-    <div class="container">
-      <a class="navbar-brand" href="{% url 'home' %}">Portafolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
-          </li>
-          <li class="nav-item d-flex align-items-center">
-            <a class="btn btn-primary btn-sm" href="{% static 'portfolio/CV.pdf' %}" target="_blank">Descargar CV</a>
-          </li>
-        </ul>
-      </div>
+<style>
+  .logo{
+    color:white;
+    cursor:pointer;
+  }
+  .logo:hover{
+      color: #D3D3D3;
+  }
+</style>
+<nav class="navbar navbar-expand-lg text-white" style="background: #1f1f1f;">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <strong class="text-primary">&lt;</strong> <strong class="logo">JY</strong> <strong class="text-primary">&#47;&gt;</strong>
+    </a>Versi&oacute;n 1.1
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'blog:posts' %}"><i class="fa-solid fa-blog"></i> Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#contacto"><i class="fa-solid fa-id-badge"></i> Contacto</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="btn btn-primary btn-sm" href="{% static 'portfolio/CV.pdf' %}" target="_blank"><i class="fa-solid fa-download"></i> Descargar CV</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
